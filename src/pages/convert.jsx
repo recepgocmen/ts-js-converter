@@ -16,24 +16,54 @@ export default function Convert() {
   };
 
   return (
-    <div>
-      <h1>Code Converter</h1>
-      <label>
-        JavaScript code:
-        <textarea value={jsCode} onChange={(e) => setJsCode(e.target.value)} />
-      </label>
-      <br />
-      <button onClick={() => handleConvertToTypeScript}>
-        Convert to TypeScript
-      </button>
-      <br />
-      <br />
-      <label>
-        TypeScript code:
-        <textarea value={tsCode} onChange={(e) => setTsCode(e.target.value)} />
-      </label>
-      <br />
-      <button onClick={handleConvertToJavaScript}>Convert to JavaScript</button>
+    <div
+      style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
+    >
+      <h1
+        style={{ marginTop: "2rem", marginBottom: "1rem", textAlign: "center" }}
+      >
+        Code Converter
+      </h1>
+      <div style={{ width: "80%" }}>
+        <label style={{ display: "block", marginBottom: "0.5rem" }}>
+          <h2 style={{ marginBottom: "0.5rem" }}>JSX code:</h2>
+          <textarea
+            value={jsCode}
+            onChange={(e) => setJsCode(e.target.value)}
+            style={{ width: "100%", minHeight: "10rem" }}
+          />
+        </label>
+        <button
+          onClick={() => handleConvertToTypeScript()}
+          style={{
+            display: "block",
+            margin: "1rem auto",
+            padding: "5px",
+            border: "1px solid white",
+          }}
+        >
+          Convert to TSX
+        </button>
+        <label style={{ display: "block", marginBottom: "0.5rem" }}>
+          <h2 style={{ marginBottom: "0.5rem" }}>TSX code:</h2>
+          <textarea
+            value={tsCode}
+            onChange={(e) => setTsCode(e.target.value)}
+            style={{ width: "100%", minHeight: "10rem" }}
+          />
+        </label>
+        <button
+          onClick={handleConvertToJavaScript}
+          style={{
+            display: "block",
+            margin: "1rem auto",
+            padding: "5px",
+            border: "1px solid white",
+          }}
+        >
+          Convert to JSX
+        </button>
+      </div>
     </div>
   );
 }
